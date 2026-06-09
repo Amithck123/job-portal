@@ -18,7 +18,6 @@ import CompaniesPage from "./Pages/Developer/CompaniesPage";
 import JobsPage from "./Pages/Developer/JobsPage";
 import ApplicationsPage from "./Pages/Developer/ApplicationsPage"; 
 import AppliedJobs from "./Pages/AppliedJobs";
-
 function App() {
   return (
     <BrowserRouter>
