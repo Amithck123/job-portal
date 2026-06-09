@@ -13,6 +13,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-slate-900 text-white px-6 py-4 flex justify-between items-center">
+      
       <h1 className="text-2xl font-bold">Job Portal</h1>
 
       <div className="flex items-center gap-4">

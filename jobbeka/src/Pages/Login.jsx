@@ -55,8 +55,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-black via-slate-900 to-black px-4">
-      <div className="w-full max-w-md bg-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-700">
+    <div className="min-h-screen flex items-center justify-center bg-[url(/img/mountains.jpg)] bg-linear-to-r from-black via-slate-900 to-black ">
+      <div className="w-full max-w-md  bg-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-700">
         <h1 className="text-4xl font-bold text-center text-white mb-2">
           Welcome Back
         </h1>
