@@ -12,6 +12,8 @@ import Companies from "./Pages/Companies";
 // Developer Base Layout
 import DeveloperLayout from "./Pages/Developer/DeveloperLayout";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 // Developer Sub-Pages
 import Dashboard from "./Pages/Developer/Dashboard";
 import CompaniesPage from "./Pages/Developer/CompaniesPage";
@@ -28,17 +30,25 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         
         {/* General User Routes (wrapped in MainLayout for sidebar) */}
-        <Route element={<MainLayout />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/companies" element={<Companies />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/applied-jobs" element={<AppliedJobs />} />
-        </Route>
-
-        <Route path="/admin" element={<AdminDashboard />} />
-
-        <Route path="/dashboard" element={<DeveloperLayout />}>
-          <Route index element={<Dashboard />} />
+       <Route
+  element={
+    <ProtectedRoute>
+      <MainLayout />
+    </ProtectedRoute>
+  }
+>
+  <Route path="/home" element={<Home />} />
+  <Route path="/companies" element={<Companies />} />
+  <Route path="/profile" element={<Profile />} />
+  <Route path="/applied-jobs" element={<AppliedJobs />} />
+</Route>
+<Route
+  path="/admin" element={<ProtectedRoute><AdminDashboard /> </ProtectedRoute>}
+/>
+<Route
+  path="/dashboard"
+  element={<ProtectedRoute><DeveloperLayout /></ProtectedRoute>}
+>          <Route index element={<Dashboard />} />
           <Route path="companies" element={<CompaniesPage />} />
           <Route path="jobs" element={<JobsPage />} />
           <Route path="applications" element={<ApplicationsPage />} />
