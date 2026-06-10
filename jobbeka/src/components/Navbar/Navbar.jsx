@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
+
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -13,9 +14,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-slate-900 text-white px-6 py-4 flex justify-between items-center">
-      
-      <h1 className="text-2xl font-bold">Job Portal</h1>
-
+<img src="/logoo-removebg-preview.png" alt="Logo" className="h-10 w-25" />
       <div className="flex items-center gap-4">
         <h2>Welcome, {user?.name}</h2>
 

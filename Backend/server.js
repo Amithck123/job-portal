@@ -20,7 +20,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/company", companyRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/applications", applicationRoutes);
-
+app.use(
+  cors({
+    origin: "https://jobportal.vercel.app",
+    credentials: true,
+  })
+);
 // MongoDB Connection
 mongoose.connect("mongodb://localhost:27017/jobportal") // Tip: Added a database name 'jobportal' here so it saves nicely
   .then(() => console.log("MongoDB Connected"))
